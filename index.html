@@ -325,7 +325,6 @@
             .subject-card img { max-width: 220px; height: 300px; }
         }
 
-        /* Corrección crítica aquí: Rompemos el posicionado absoluto para pantallas móviles */
         @media (max-width: 1024px) {
             .header-navbar { 
                 position: static; 
@@ -339,7 +338,7 @@
             
             .content-workspace {
                 display: flex;
-                flex-direction: column; /* Apila todo uno abajo de otro en orden lineal */
+                flex-direction: column; 
                 align-items: center;
                 gap: 2.5rem;
                 height: auto;
@@ -348,7 +347,6 @@
                 margin-top: 1rem;
             }
             
-            /* Quitamos coordenadas absolutas para que ocupen su propio espacio en celulares */
             .form-embed, .subject-card {
                 position: relative;
                 left: auto !important;
@@ -359,17 +357,16 @@
                 max-width: 520px;
             }
 
-            /* Reordenamos la estructura: Expositor 1 -> Formulario -> Expositor 2 */
+            /* NUEVO CAMBIO DE ORDEN: Ignacio (1) -> Jeremias (2) -> Google Forms al final (3) */
             .subject-card.left { order: 1; }
-            .form-embed { order: 2; }
-            .subject-card.right { order: 3; }
+            .subject-card.right { order: 2; }
+            .form-embed { order: 3; }
 
             .subject-card img { 
                 max-width: 240px; 
                 height: auto; 
             }
             
-            /* En teléfonos las biografías quedan visibles por defecto bajo el expositor de forma limpia */
             .subject-bio { 
                 max-height: none; 
                 opacity: 1; 
@@ -383,7 +380,7 @@
             .countdown { gap: 1.2rem; }
             .number { font-size: 2rem; }
             .unit { min-width: 3rem; }
-            .form-embed iframe { height: 480px; } /* Ajuste de altura del iframe en pantallas muy chicas */
+            .form-embed iframe { height: 480px; } 
             .page-footer { padding: 1rem 1.2rem; }
             .page-footer p { text-align: left; }
         }
@@ -394,7 +391,7 @@
     <header class="header-navbar">
         <div class="page-logo">
             <img src="assets/Logo-Jure.png" alt="Logo Jure">
-            <div class="page-logo-text">Invita | Juventud Republicana</div>
+            <div class="page-logo-text">Juventud Republicana</div>
         </div>
         <button id="contact-btn" class="contact-btn" aria-expanded="false" aria-controls="contact-box">Contáctanos</button>
     </header>
@@ -410,7 +407,7 @@
         <div class="hero-info">
             5 DE JUNIO<br>
             17:00 HORAS<br>
-            PDTE ERRÁZURIZ 4305
+            PDTE ERRÁZURIZ 4305, LAS CONDES
         </div>
 
         <div class="countdown-wrap">
@@ -443,7 +440,7 @@
                 <strong>Ignacio Dülger</strong>
                 Consejero Regional
                 <div class="subject-bio">
-                    Es Consejero Regional de la Bancada Republicana en el Gobierno Regional Metropolitano de Santiago, Abogado egresado de la Universidad de los Andes y figura clave del Partido Republicano. Desde 2017 ha desempeñado un rol de coordinación importante en apoyo al Presidente José Antonio Kast.
+                    Es Consejero Regional de la Bancada Republicana en el Gobierno Regional Metropolitano de Santiago, Abogado egresado de la Universidad de los Andes y figura clave del Partido Republicano. Desde 2017 ha desempeñado un rol de coordination importante en apoyo al Presidente José Antonio Kast.
                 </div>
             </div>
         </div>
