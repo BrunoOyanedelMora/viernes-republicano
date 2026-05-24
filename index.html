@@ -67,6 +67,32 @@
             color: var(--accent);
         }
 
+        /* Contenedor para alinear Instagram y el Botón de Contacto */
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        /* Estilos para el logo de Instagram */
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        .instagram-link:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        .instagram-link img {
+            display: block;
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            /* Filtro para asegurar que el logo se vea completamente blanco brillante */
+            filter: brightness(0) invert(1);
+        }
+
         .contact-btn {
             background: transparent;
             border: 1px solid rgba(255,255,255,0.2);
@@ -334,7 +360,9 @@
                 gap: 1rem; 
             }
             .hero-main { padding-top: 2rem; }
-            .contact-box { position: absolute; top: 7rem; right: 50%; transform: translateX(50%); }
+            
+            /* Ajuste de la caja desplegable en móvil */
+            .contact-box { position: absolute; top: 9.5rem; right: 50%; transform: translateX(50%); }
             
             .content-workspace {
                 display: flex;
@@ -357,7 +385,6 @@
                 max-width: 520px;
             }
 
-            /* El orden de prioridad en móvil */
             .subject-card.left { order: 1; }
             .subject-card.right { order: 2; }
             .form-embed { order: 3; }
@@ -393,7 +420,13 @@
             <img src="assets/Logo-Jure.png" alt="Logo Jure">
             <div class="page-logo-text">Juventud Republicana</div>
         </div>
-        <button id="contact-btn" class="contact-btn" aria-expanded="false" aria-controls="contact-box">Contáctanos</button>
+        
+        <div class="navbar-actions">
+            <a href="https://www.instagram.com/jurepublicana/" target="_blank" rel="noopener noreferrer" class="instagram-link" title="Ir a Instagram">
+                <img src="assets/Logo-Instagram.png" alt="Instagram Juventud Republicana">
+            </a>
+            <button id="contact-btn" class="contact-btn" aria-expanded="false" aria-controls="contact-box">Contáctanos</button>
+        </div>
     </header>
 
     <div id="contact-box" class="contact-box" role="dialog" aria-hidden="true" aria-labelledby="contact-title">
@@ -455,7 +488,7 @@
                 <strong>Jeremias Alonso</strong>
                 Presidente Nacional<br>Juventud Republicana
                 <div class="subject-bio">
-                    Es actualmente el Presidente Nacional de la Juventud Republicana, Ingeniero Comercial egresado de la Universidad de Las Américas y anteriormente, candidato a Concejal en la comuna de San Bernardo. Mantiene una extensa trayectoria en la Juventud del Partido Republicano, permitiéndole, ser nombrado Presidente de la Juventud Republicana.
+                    Es actualmente el Presidente Nacional de la Juventud Republicana, Ingeniero Comercial egresado de la Universidad de Las Américas y anteriormente, candidato a Concejal en la comuna de San Bernardo. Mantiene una externa trayectoria en la Juventud del Partido Republicano, permitiéndole, ser nombrado Presidente de la Juventud Republicana.
                 </div>
             </div>
         </div>
