@@ -7,7 +7,6 @@
     <link rel="icon" href="assets/Logo-Jure.png" type="image/png" />
     <style>
         :root {
-            /* Color unificado basado en tus imágenes para que no se note corte de color */
             --bg-solid: #500f0f; 
             --bg-blue: #0b1b3d; 
             --accent: #ffffff;
@@ -221,7 +220,7 @@
             box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
         }
 
-        /* Tarjetas de los Expositores con efecto hover */
+        /* Tarjetas de los Expositores con efecto hover (Escritorio) */
         .subject-card {
             position: absolute;
             top: 0;
@@ -250,7 +249,6 @@
             transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Copia base del cargo */
         .subject-copy {
             margin-top: 1.2rem;
             font-size: 0.85rem;
@@ -284,7 +282,7 @@
             transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.3s ease;
         }
 
-        /* --- ACCIÓN AL COLOCAR EL MOUSE (HOVER) --- */
+        /* --- ACCIONES HOVER ESCRITORIO --- */
         .subject-card:hover img {
             transform: translateY(-6px);
             filter: drop-shadow(0 12px 20px rgba(0,0,0,0.4));
@@ -320,37 +318,63 @@
             margin-bottom: 0;
         }
 
-        /* --- RESPONSIVE DESIGN --- */
+        /* --- RESPONSIVE DESIGN (VISTA TELÉFONO Y TABLET REAL) --- */
         @media (max-width: 1200px) {
             .subject-card.left { left: 1rem; }
             .subject-card.right { right: 1rem; }
             .subject-card img { max-width: 220px; height: 300px; }
         }
 
+        /* Corrección crítica aquí: Rompemos el posicionado absoluto para pantallas móviles */
         @media (max-width: 1024px) {
-            .header-navbar { position: static; height: auto; padding: 2rem 1rem 0 1rem; flex-direction: column; gap: 1rem; }
+            .header-navbar { 
+                position: static; 
+                height: auto; 
+                padding: 2rem 1rem 0 1rem; 
+                flex-direction: column; 
+                gap: 1rem; 
+            }
             .hero-main { padding-top: 2rem; }
             .contact-box { position: absolute; top: 7rem; right: 50%; transform: translateX(50%); }
             
             .content-workspace {
                 display: flex;
-                flex-direction: column;
+                flex-direction: column; /* Apila todo uno abajo de otro en orden lineal */
                 align-items: center;
-                gap: 3.5rem;
+                gap: 2.5rem;
                 height: auto;
+                min-height: auto;
                 padding: 0 1rem;
                 margin-top: 1rem;
             }
+            
+            /* Quitamos coordenadas absolutas para que ocupen su propio espacio en celulares */
             .form-embed, .subject-card {
-                position: static;
-                transform: none;
+                position: relative;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                transform: none !important;
                 width: 100%;
                 max-width: 520px;
             }
-            .subject-card.left, .subject-card.right { left: auto; right: auto; }
-            .subject-card img { max-width: 260px; height: 340px; }
+
+            /* Reordenamos la estructura: Expositor 1 -> Formulario -> Expositor 2 */
+            .subject-card.left { order: 1; }
+            .form-embed { order: 2; }
+            .subject-card.right { order: 3; }
+
+            .subject-card img { 
+                max-width: 240px; 
+                height: auto; 
+            }
             
-            .subject-bio { max-height: none; opacity: 1; margin-top: 0.8rem; }
+            /* En teléfonos las biografías quedan visibles por defecto bajo el expositor de forma limpia */
+            .subject-bio { 
+                max-height: none; 
+                opacity: 1; 
+                margin-top: 0.8rem; 
+            }
         }
 
         @media (max-width: 600px) {
@@ -359,6 +383,7 @@
             .countdown { gap: 1.2rem; }
             .number { font-size: 2rem; }
             .unit { min-width: 3rem; }
+            .form-embed iframe { height: 480px; } /* Ajuste de altura del iframe en pantallas muy chicas */
             .page-footer { padding: 1rem 1.2rem; }
             .page-footer p { text-align: left; }
         }
@@ -369,7 +394,7 @@
     <header class="header-navbar">
         <div class="page-logo">
             <img src="assets/Logo-Jure.png" alt="Logo Jure">
-            <div class="page-logo-text">Juventud Republicana</div>
+            <div class="page-logo-text">Invita | Juventud Republicana</div>
         </div>
         <button id="contact-btn" class="contact-btn" aria-expanded="false" aria-controls="contact-box">Contáctanos</button>
     </header>
@@ -385,7 +410,7 @@
         <div class="hero-info">
             5 DE JUNIO<br>
             17:00 HORAS<br>
-            PDTE ERRÁZURIZ 4305, LAS CONDES
+            PDTE ERRÁZURIZ 4305
         </div>
 
         <div class="countdown-wrap">
@@ -442,9 +467,9 @@
 
     <footer class="page-footer">
         <div class="footer-container">
-            <p>El evento "Viernes Republicano", organizado por la Juventud Republicana, es una actividad privada de formación política.</p>
-            <p>El registro en este sitio web constituye una solicitud de inscripción y no garantiza el ingreso. El acceso definitivo estará sujeto a la recepción de un código de confirmación oficial enviado vía correo electrónico o WhatsApp, el cual deberá presentarse junto a la Cédula de Identidad.</p>
-            <p>El STAFF organizador se reserva el derecho de admisión y permanencia en virtud de garantizar la seguridad y el correcto desarrollo del evento.</p>
+            <p>El evento producido por la Juventud Republicana con nombre "Viernes Republicano", tiene como fines la formación política de los asistentes interesados.</p>
+            <p>La inscripción al evento no asegura el ingreso. Posterior a la inscripción, se enviará por correo o WhatsApp un mensaje de confirmación y un código de acceso que deberán presentar junto a su cédula de identidad para acreditar su ingreso.</p>
+            <p>Este evento tiene un carácter privado, por lo cuál el STAFF a cargo de este evento, en vista del correcto desarrollo de la actividad, tiene el derecho de admitir o registrar la entrada a personas que ya recibieron su confirmación y código de acceso.</p>
         </div>
     </footer>
 
