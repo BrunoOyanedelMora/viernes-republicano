@@ -67,29 +67,29 @@
             color: var(--accent);
         }
 
-        /* Contenedor para alinear Instagram y el Botón de Contacto */
+        /* Contenedor para alinear Redes Sociales y el Botón de Contacto */
         .navbar-actions {
             display: flex;
             align-items: center;
             gap: 1.2rem;
         }
 
-        /* Estilos para el logo de Instagram */
-        .instagram-link {
+        /* Estilos compartidos para los logos de redes (Instagram y WhatsApp) */
+        .social-link {
             display: flex;
             align-items: center;
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
-        .instagram-link:hover {
+        .social-link:hover {
             transform: scale(1.1);
             opacity: 0.9;
         }
-        .instagram-link img {
+        .social-link img {
             display: block;
             width: 28px;
             height: 28px;
             object-fit: contain;
-            /* Filtro para asegurar que el logo se vea completamente blanco brillante */
+            /* Filtro para asegurar que los logos se vean completamente blancos a juego con el diseño */
             filter: brightness(0) invert(1);
         }
 
@@ -361,7 +361,7 @@
             }
             .hero-main { padding-top: 2rem; }
             
-            /* Ajuste de la caja desplegable en móvil */
+            /* Ajuste de la caja desplegable en móvil considerando el menú de botones */
             .contact-box { position: absolute; top: 9.5rem; right: 50%; transform: translateX(50%); }
             
             .content-workspace {
@@ -422,9 +422,14 @@
         </div>
         
         <div class="navbar-actions">
-            <a href="https://www.instagram.com/jurepublicana/" target="_blank" rel="noopener noreferrer" class="instagram-link" title="Ir a Instagram">
+            <a href="https://www.instagram.com/jurepublicana/" target="_blank" rel="noopener noreferrer" class="social-link" title="Ir a Instagram">
                 <img src="assets/Logo-Instagram.png" alt="Instagram Juventud Republicana">
             </a>
+            
+            <a href="https://wa.me/56972275845?text=Hola%2C%20necesito%20ayuda%20con%20el%20pr%C3%B3ximo%20evento%20%22Viernes%20Republicano%22%20que%20se%20realizar%C3%A1%20el%20d%C3%ADa%205%20de%20junio%20a%20las%2017%3A00%20horas." target="_blank" rel="noopener noreferrer" class="social-link" title="Contactar por WhatsApp">
+                <img src="assets/Logo-Whatsapp.png" alt="WhatsApp Juventud Republicana">
+            </a>
+            
             <button id="contact-btn" class="contact-btn" aria-expanded="false" aria-controls="contact-box">Contáctanos</button>
         </div>
     </header>
@@ -488,7 +493,7 @@
                 <strong>Jeremias Alonso</strong>
                 Presidente Nacional<br>Juventud Republicana
                 <div class="subject-bio">
-                    Es actualmente el Presidente Nacional de la Juventud Republicana, Ingeniero Comercial egresado de la Universidad de Las Américas y anteriormente, candidato a Concejal en la comuna de San Bernardo. Mantiene una externa trayectoria en la Juventud del Partido Republicano, permitiéndole, ser nombrado Presidente de la Juventud Republicana.
+                    Es actualmente el Presidente Nacional de la Juventud Republicana, Ingeniero Comercial egresado de la Universidad de Las Américas y anteriormente, candidato a Concejal en la comuna de San Bernardo. Mantiene una extensa trayectoria en la Juventud del Partido Republicano, permitiéndole, ser nombrado Presidente de la Juventud Republicana.
                 </div>
             </div>
         </div>
