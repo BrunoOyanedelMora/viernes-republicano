@@ -357,7 +357,7 @@
                 max-width: 520px;
             }
 
-            /* Los expositores van primero y el Google Forms queda abajo del todo en celulares */
+            /* El orden de prioridad en móvil */
             .subject-card.left { order: 1; }
             .subject-card.right { order: 2; }
             .form-embed { order: 3; }
@@ -446,7 +446,7 @@
         </div>
 
         <div class="form-embed">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1_CWwnqRJ-P0K-_NlhVUvPfPzNfvwUBzdaeQYcjYWyVuAw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSee1_CWwnqRJ-P0K-_NlhVUvPfPzNfvwUBzdaeQYcjYWyVuAw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
         </div>
 
         <div class="subject-card right">
@@ -472,7 +472,6 @@
 
     <script>
         (function(){
-            // Temporizador de Cuenta Regresiva
             const target = new Date('2026-06-05T17:00:00');
             const $d = document.getElementById('days');
             const $h = document.getElementById('hours');
@@ -501,7 +500,6 @@
             update();
             setInterval(update, 1000);
 
-            // Interacción del cuadro de contacto
             const btn = document.getElementById('contact-btn');
             const box = document.getElementById('contact-box');
             btn.addEventListener('click', (e)=>{
